@@ -1,0 +1,62 @@
+.container-fluid {
+    background: linear-gradient(132deg, #bb2f2f, #c22105);
+    background-size: 400% 400%;
+    animation: BackgroundGradient 30s ease infinite;
+}
+
+@keyframes BackgroundGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+  svg {
+      display: block;
+      font: 10.5em 'Roboto';
+      font-family: 'Roboto', sans-serif;
+      width: 960px;
+      height: 300px;
+      margin: 0 auto;
+  }
+  
+  .web-coder-skull {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .web-coder-skull:nth-child(6){
+      stroke: #72c0e7;
+      animation-delay: -1;
+  }
+  
+  .web-coder-skull:nth-child(2){
+      stroke: #9edaf3;
+      animation-delay: -2s;
+  }
+  
+  .web-coder-skull:nth-child(3){
+      stroke: rgb(241, 207, 142);
+      animation-delay: -3s;
+  }
+  
+  .web-coder-skull:nth-child(4){
+      stroke: rgb(230, 94, 94);
+      animation-delay: -4s;
+  }
+  
+  .web-coder-skull:nth-child(5){
+      stroke: rgb(243, 87, 87);
+      animation-delay: -5s;
+  }
+  .web-coder-skull:nth-child(1){ 
+  stroke: green;
+  animation-delay: -1s;
+  }
+  
+  @keyframes stroke-offset{
+      100% {stroke-dashoffset: -35%;}
+  }
