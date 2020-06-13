@@ -42,7 +42,7 @@ function generate_table(data) {
         tr.appendChild(th);
     }
 
-    // add json data to the table as rows.
+    // add API data to the table as rows.
     for (var i = 0; i < data.length; i++) {
 
         tr = table.insertRow(-1);
@@ -53,7 +53,7 @@ function generate_table(data) {
         }
     }
 
-    // Now, add the newly created table with json data, to a container.
+    // Now, add the newly created table with API data, to a container.
     var divShowData = document.getElementById('showData');
     divShowData.innerHTML = "";
     divShowData.appendChild(table);
