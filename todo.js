@@ -6,13 +6,7 @@ xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         var response = JSON.parse(this.responseText);
       generate_table(response);
-        /* var output = "";
-        for(var i = 0 ;i < response.length;i++){
-            output += "<li>" + response[i].title + "</li>";
-            output += "<li>" + response[i].completed + "</li>";
-        }*/
-//console.log(output);
-//document.getElementById("demo").innerHTML=output;
+       
     }
 };
 xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
@@ -35,26 +29,28 @@ function generate_table(data) {
     var table = document.createElement("table");
     // Create table header row using the extracted headers above.
     var tr = table.insertRow(-1);                   // table row.
-
-    for (var i = 0; i < col.length; i++) {
-        var th = document.createElement("th");      // table header.
-        th.innerHTML = col[i];
-        tr.appendChild(th);
-    }
-
-    // add API data to the table as rows.
+    var th = document.createElement("th");      // table header.
+    
+ // add API data to the table as rows.
     for (var i = 0; i < data.length; i++) {
+       tr = table.insertRow(-1);
+       var checkbox = document.createElement("input");
+       checkbox.setAttribute("type","checkbox");
+       var tableCell = tr.insertCell(-1);
+      // tableCell.innerHTML = checkbox;
+      tr.appendChild(checkbox);
+     
 
-        tr = table.insertRow(-1);
-
-        for (var j = 0; j < col.length; j++) {
+  for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = data[i][col[j]];
-        }
+            tabCell.innerHTML = data[i][col[j]];   
+           tr.appendChild(tabCell);
+           }
     }
 
-    // Now, add the newly created table with API data, to a container.
+    // Now, add the newly created table with API, to a container.
     var divShowData = document.getElementById('showData');
     divShowData.innerHTML = "";
     divShowData.appendChild(table);
+   // divShowData.appendChild(checkbox);
 }
