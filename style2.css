@@ -1,5 +1,5 @@
 .container-fluid {
-    background: linear-gradient(132deg, #bb2f2f, #c22105);
+    background: linear-gradient(132deg,  #b30606, #0b8d41);
     background-size: 400% 400%;
     animation: BackgroundGradient 30s ease infinite;
 }
@@ -29,31 +29,31 @@
   }
   
   .web-coder-skull:nth-child(6){
-      stroke: #72c0e7;
+      stroke:  #7b0499;;
       animation-delay: -1;
   }
   
   .web-coder-skull:nth-child(2){
-      stroke: #9edaf3;
+      stroke:  #d1ff02;
       animation-delay: -2s;
   }
   
   .web-coder-skull:nth-child(3){
-      stroke: rgb(241, 207, 142);
+      stroke:  rgb(252, 251, 251);
       animation-delay: -3s;
   }
   
   .web-coder-skull:nth-child(4){
-      stroke: rgb(230, 94, 94);
+      stroke:  rgb(27, 255, 198);
       animation-delay: -4s;
   }
   
   .web-coder-skull:nth-child(5){
-      stroke: rgb(243, 87, 87);
+      stroke:  rgb(4, 130, 248);
       animation-delay: -5s;
   }
   .web-coder-skull:nth-child(1){ 
-  stroke: green;
+  stroke:  rgb(245, 4, 44);
   animation-delay: -1s;
   }
   
