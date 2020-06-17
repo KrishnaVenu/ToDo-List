@@ -1,3 +1,4 @@
+var counter = 0;
 $(document).ready("load",ajax());
 let item =[];
 function ajax(){
@@ -6,7 +7,7 @@ xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         var response = JSON.parse(this.responseText);
       generate_table(response);
-       
+     
     }
 };
 xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
@@ -22,22 +23,28 @@ function generate_table(data) {
         for (var key in data[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
-            }
+               }
         }
-    }
+        }
+        
     // Create a table.
     var table = document.createElement("table");
+    
     // Create table header row using the extracted headers above.
     var tr = table.insertRow(-1);                   // table row.
     var th = document.createElement("th");      // table header.
+    
     
  // add API data to the table as rows.
     for (var i = 0; i < data.length; i++) {
        tr = table.insertRow(-1);
        var checkbox = document.createElement("input");
        checkbox.setAttribute("type","checkbox");
+    if (data[i].completed == true){
+       checkbox.setAttribute("disabled","true");
+        checkbox.setAttribute("checked","true");
+    }
        var tableCell = tr.insertCell(-1);
-      // tableCell.innerHTML = checkbox;
       tr.appendChild(checkbox);
      
 
@@ -46,11 +53,25 @@ function generate_table(data) {
             tabCell.innerHTML = data[i][col[j]];   
            tr.appendChild(tabCell);
            }
+           
     }
 
-    // Now, add the newly created table with API, to a container.
     var divShowData = document.getElementById('showData');
     divShowData.innerHTML = "";
     divShowData.appendChild(table);
-   // divShowData.appendChild(checkbox);
+
+
+$("input").click(function(){
+
+    var promise = new Promise(function(resolve , reject){
+     counter ++;
+     
+    if(counter == 5){
+        resolve("Congrats.5 Tasks have been Successfully Completed!!!");
+    }
+    });
+ promise.then(function(y){
+       alert(y);
+    })   
+});
 }
