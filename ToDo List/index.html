@@ -20,21 +20,24 @@
                 <p class="lead text-white">A to do list not only creates order but also gives you a strategy for getting things done.</p>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col">
               <div class="row justify-content-center">
                 <div class="col-xl-8 col-md-10">
-                  <form class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
+                  <!--<form class="position-relative d-block aos-init aos-animate" data-aos="fade-up">-->
+                    <form onsubmit="return validate(validate2)">
                     <div class="form-group">
                       <label class="text-white" for="username">Username</label>
                       <input name="username" id="uname" type="text" class="form-control" placeholder="Username">
+                      <!-- <label for="error"id="error1"></label> -->
                     </div>
                     <div class="form-group">
                       <label class="text-white" for="password">Password</label>
                       <input name="password" id="pwd" type="password" class="form-control" placeholder="Password">
+                      <!-- <label for="error"id="error2"></label> -->
                     </div><br>
                   
                     <div class="form-group text-center">
-                      <button class="btn btn-lg btn-success btn-block mb-2" type="button"onclick="validate();">Login</button>
+                      <button class="btn btn-lg btn-success btn-block mb-2" type="submit"id="login">Login</button>
                      </div>
                   </form>
                 </div>
@@ -121,8 +124,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script>
-  var 
-</script>
+<script src="script.js"></script>
 </body>
 </html>
